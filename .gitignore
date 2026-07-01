@@ -1,0 +1,75 @@
+# Dependencies
+node_modules/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Cypress cache
+.cypress-cache/
+.cache/
+CypressCache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Build
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Package manager
+package-lock.json
+# Remova a linha acima se quiser versionar o package-lock.json (recomendado)
+
+yarn.lock
+pnpm-lock.yaml
+
+# Test reports
+reports/
+report/
+allure-results/
+allure-report/
+mochawesome-report/
+mochawesome-report-generator/
+test-results/
+
+# Cucumber reports
+cucumber-report/
+cucumber-reports/
+*.json
+
+# Cypress environment
+cypress.env.json
+
+# Misc
+*.swp
+*.swo
