@@ -9,8 +9,10 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://www.saucedemo.com/',
     specPattern: "**/*.feature",
+    reporter: 'cypress-mochawesome-reporter',
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
+      require('cypress-mochawesome-reporter/plugin')(on);
 
       on(
         "file:preprocessor",
