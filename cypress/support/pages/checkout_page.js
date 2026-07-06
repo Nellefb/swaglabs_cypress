@@ -5,6 +5,8 @@ const firstnameInput = "#first-name"
 const lastnameInput = "#last-name"
 const postalcodeInput = "#postal-code"
 const btnContinue = "#continue"
+const errorMessage = ".error-message-container"
+const btnCancel = "#cancel"
 
 export default {
     validatePage() {
@@ -30,7 +32,16 @@ export default {
 
     clickContinue(){
         cy.get(btnContinue).click()
-    }
+    },
 
+    checkErrorMessage(error){
+        cy.get(errorMessage)
+            .should("be.visible")
+            .should("have.text", error)
+    }, 
+
+    cancelCheckout(){
+        cy.get(btnCancel).click()
+    }
 
 }

@@ -1,7 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor"
 import cart_page from "../pages/cart_page"
 
-Given("clicks on Checkout", () => {
+Given("clicks on Checkout button", () => {
     cart_page.clickCheckout()
 })
 
@@ -24,4 +24,8 @@ Then("the shopping cart should not contain the product {string}", (product) => {
 Then("the product {string} should be displayed", (product) => {
     cart_page.validatePage()
     cart_page.validateProduct(product)
+})
+
+Then("the Cart page should be displayed", () => {
+    cart_page.validatePage()
 })
