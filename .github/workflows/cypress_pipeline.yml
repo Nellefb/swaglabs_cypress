@@ -1,0 +1,31 @@
+name: Run Cypress Tests 
+
+on: 
+  pull_request:
+    branches: [master]
+
+jobs: 
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout/Clone do projeto
+        uses: actions/checkout@v7
+      
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Run testes
+        uses: cypress-io/github-action@v7
+
+      #upload relatorio do mocha
+      - name: Upload Relatório
+        uses: actions/upload-artifact@v7
+        with:
+          name: Relatório
+          path: cypress/reports/html
